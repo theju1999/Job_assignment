@@ -38,8 +38,9 @@
     <!-- logged in user information -->
     <?php  if (isset($_SESSION['username'])) : ?>
     	<b><p>Welcome <strong><?php echo $_SESSION['username']; ?></strong></p></b>
+
 		<b><p>Now u can find the fibonacci series </p></b>
-    	<!-- <p> <a href="index.php?logout='1'" style="color: red;">logout</a> </p> -->
+    	<p> <a href="index.php?logout='1'" style="color: red;">logout</a> </p>
     <?php endif ?>
 	
   <form method="post">
@@ -58,25 +59,30 @@
 	<tr>
 		<td>
   <button name="submit">Submit</button>
-	</tr>
-  </form>
-
-<?php
+  <br><br>
+  <?php
 if (isset($_POST['submit'])) {
   $n=$_POST['Number'];
   $number1 = $_POST['n1'];
   $number2 = $_POST['n2'];
   echo "Fibonacci Series  are \n";
-  echo $number1.' '.$number2.' ';
+    echo $number1.' '.$number2.' ';
+ 
   for($i = 2; $i < $n; $i++){
     $number3= $number1 + $number2;
     echo $number3.' ';
     $number1 = $number2;
     $number2 = $number3;
     
+    
+   
   }
 }
     ?>
+	</tr>
+  </form>
+
+
 	
 
 </table>	
